@@ -1,10 +1,11 @@
+import ContactElementList from 'components/ContactElementList/ContactElementList'
 import React from 'react'
 
-const ContactList = ({dataContact}) => {
+const ContactList = ({dataContact, deleteHandle}) => {
   return (
     <ul>
     {dataContact.map(contact => (
-      <li key={contact.id}> {`${contact.name}: ${contact.number}`}</li>
+      <ContactElementList key={contact.id} data={contact} deleteHandle={deleteHandle}/>
     ))}
   </ul>
   )
